@@ -5,5 +5,5 @@ dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$
 dnf group upgrade core -y
 dnf4 group update core -y
 dnf -y update
-sudo -u $SUDO_USER <flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo>
+sudo -u "${SUDO_USER:-$USER}" flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 reboot
