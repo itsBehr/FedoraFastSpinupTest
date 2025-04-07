@@ -6,8 +6,9 @@ dnf4 group upgrade multimedia -y
 dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing -y
 dnf upgrade @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
 dnf group install sound-and-video -y
-dnf install ffmpeg-libs libva libva-utils openh264 gstreamer1-plugin-openh264 mozilla-openh264 steam lutris telegram git btop vlc gimp blender @virtualization flatseal quodlibet yt-dlp -y
-sudo -u "${SUDO_USER:-$USER}" flatpak install vesktop
+dnf install ffmpeg-libs libva libva-utils openh264 gstreamer1-plugin-openh264 mozilla-openh264 steam lutris telegram git btop vlc gimp blender flatseal quodlibet yt-dlp -y
+dnf group install virtualization -y
+wget --content-disposition "https://vencord.dev/download/vesktop/amd64/rpm" | dnf install ~/vesktop-*.rpm -y
 dnf config-manager setopt fedora-cisco-openh264.enabled=1
 rm -f /usr/lib64/firefox/browser/defaults/preferences/firefox-redhat-default-prefs.js
 systemctl enable libvirtd
