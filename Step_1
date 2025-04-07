@@ -1,5 +1,5 @@
 #!/bin/bash
-/etc/dnf/dnf.conf >> max_parallel_downloads=10 
+sudo /etc/dnf/dnf.conf >> max_parallel_downloads=10 
 dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release -y
 dnf group upgrade core -y
