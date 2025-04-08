@@ -1,4 +1,4 @@
-8#!/bin/bash
+#!/bin/bash
 dnf in fuse -y
 dnf install akmod-nvidia -y
 dnf install xorg-x11-drv-nvidia-cuda -y
