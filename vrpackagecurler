@@ -1,5 +1,7 @@
 #!/bin/bash
 echo "export PATH=$PATH:~/.dotnet/tools/" | tee -a ~/.bashrc
 dotnet tool install --global vrchat.vpm.cli
-wget --content-disposition -P ~/.local/share "https://download.unity3d.com/download_unity/887be4894c44/LinuxEditorInstaller/Unity-2022.3.22f1.tar.xz" && sudo -u "${SUDO_USER:-$USER}" tar -xf ~/.local/share/Unity-2022.3.22f1.tar.xz && sudo -u "${SUDO_USER:-$USER}" rm -f ~/.local/share/Unity-2022.3.22f1.tar.xz
-
+vpm install templates
+wget --content-disposition -P ~/Unity/Hub "https://download.unity3d.com/download_unity/887be4894c44/LinuxEditorInstaller/Unity-2022.3.22f1.tar.xz" && sudo -u "${SUDO_USER:-$USER}" tar -xf ~/.local/share/Unity-2022.3.22f1.tar.xz && sudo -u "${SUDO_USER:-$USER}" rm -f ~/.local/share/Unity-2022.3.22f1.tar.xz
+vpm list unity
+sed 's/"pathToUnityExe": "",/"pathToUnityExe": "~\/Unity\/Hub\/Editor\/Unity", ; s/"pathToUnityHub": "",/"pathToUnityHub": "\/opt\/unityhub\/unityhub-bin"' ~/.local/share/VRChatCreatorCompanion/settings.json > ~/.local/share/VRChatCreatorCompanion/settings.json 
