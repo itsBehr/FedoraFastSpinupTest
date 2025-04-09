@@ -3,7 +3,7 @@ dnf4 group upgrade multimedia -y
 dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing -y
 dnf upgrade @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
 dnf group install sound-and-video -y
-dnf install ffmpeg-libs libva libva-utils 
+dnf install ffmpeg-libs libva libva-utils -y
 dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
