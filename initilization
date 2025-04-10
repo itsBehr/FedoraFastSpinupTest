@@ -3,35 +3,38 @@
 
 echo "Let's get started! What type of CPU do you use?"
 read -p '(a)md or (i)ntel' cpuType
+echo
 echo "Do you have an Nvidia GPU?"
 read -p '(y)es or (n)o' gpuType
+echo
 echo "Do you want the optional Linux VR Jumpstart packages?"
 read -p '(y)es or (n)o' vrOpt
+echo
 
 if [ $cpuType = a -a $gpuType = y -a $vrOpt = y ]
 then
-wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD-NV-VR -P ~/Desktop -O fedoraquikstart.sh
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD-NV-VR > ~/Desktop/fedoraquikstart.sh
 elif [ $cpuType = a -a $gpuType = y -a $vrOpt = n ]
 then
-wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD-NV -P ~/Desktop -O fedoraquikstart.sh
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD-NV > ~/Desktop/fedoraquikstart.sh
 elif [ $cpuType = a -a $gpuType = n -a $vrOpt = n ]
 then
-wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD -P ~/Desktop -O fedoraquikstart.sh
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD > ~/Desktop/fedoraquikstart.sh
 elif [ $cpuType = a -a $gpuType = n -a $vrOpt = y ]
 then
-wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD-VR -P ~/Desktop -O fedoraquikstart.sh
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD-VR > ~/Desktop/fedoraquikstart.sh
 elif [ $cpuType = i -a $gpuType = y -a $vrOpt = y ]
 then
-wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-NV-VR -P ~/Desktop -O fedoraquikstart.sh
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-NV-VR > ~/Desktop/fedoraquikstart.sh
 elif [ $cpuType = i -a $gpuType = y -a $vrOpt = n ]
 then
-wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-NV -P ~/Desktop -O fedoraquikstart.sh
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-NV > ~/Desktop/fedoraquikstart.sh
 elif [ $cpuType = i -a $gpuType = n -a $vrOpt = n ]
 then
-wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I -P ~/Desktop -O fedoraquikstart.sh
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I > ~/Desktop/fedoraquikstart.sh
 elif [ $cpuType = i -a $gpuType = n -a $vrOpt = y ]
 then
-wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-VR -P ~/Desktop -O fedoraquikstart.sh
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-VR > ~/Desktop/fedoraquikstart.sh
 fi
 
 bash ~/Desktop/fedoraquikstart.sh
