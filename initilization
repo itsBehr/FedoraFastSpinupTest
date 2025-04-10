@@ -3,15 +3,15 @@
 
 echo "Let's get started! What type of CPU do you use?"
 prompt1="(a)md or (i)ntel | "
-read -p "$prompt1" -s cpuType
+read -p "$prompt1" cpuType
 
 echo "Do you have an Nvidia GPU?"
 prompt2="(y)es or (n)o | "
-read -p "$prompt2" -s gpuType
+read -p "$prompt2" gpuType
 
 echo "Do you want the optional Linux VR Jumpstart packages?"
 prompt3="(y)es or (n)o | "
-read -p "$prompt3" -s vrOpt
+read -p "$prompt3" vrOpt
 
 if [ $cpuType = a -a $gpuType = y -a $vrOpt = y ]
 then
