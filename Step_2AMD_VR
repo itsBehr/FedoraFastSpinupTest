@@ -1,5 +1,7 @@
 #!/bin/bash
-sudo -i dnf4 group upgrade multimedia -y
+sudo -i
+rm -f ~/Desktop/fedoraquikstart_step_3.sh
+sudo dnf4 group upgrade multimedia -y
 sudo dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing -y
 sudo dnf upgrade @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
 sudo dnf group install sound-and-video -y
@@ -41,4 +43,5 @@ EOF
 cat notsettings.notjson >> settings.json
 rm -f notsettings.notjson
 
+read -p 'Setup complete! Press enter to finalize.'
 reboot
