@@ -1,0 +1,10 @@
+#!/bin/bash
+#Initilization file:
+
+echo "Let's get started! What type of CPU do you use?"
+read -p '(a)md or (i)ntel' cpuType
+echo "Do you have an Nvidia GPU?"
+read -p '(y)es or (n)o' gpuType
+echo "Do you want the optional Linux VR Jumpstart packages?"
+read -p '(y)es or (no)' vrOpt
+
