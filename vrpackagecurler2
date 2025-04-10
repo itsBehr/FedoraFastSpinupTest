@@ -1,4 +1,4 @@
 #!/bin/bash
-wget --content-disposition -P ~/Unity/Hub "https://download.unity3d.com/download_unity/887be4894c44/LinuxEditorInstaller/Unity-2022.3.22f1.tar.xz" && sudo -u "${SUDO_USER:-$USER}" tar -xf ~/.local/share/Unity-2022.3.22f1.tar.xz && sudo -u "${SUDO_USER:-$USER}" rm -f ~/.local/share/Unity-2022.3.22f1.tar.xz
+wget --content-disposition -P ~/Unity/Hub "https://download.unity3d.com/download_unity/887be4894c44/LinuxEditorInstaller/Unity-2022.3.22f1.tar.xz" && tar -xf ~/.local/share/Unity-2022.3.22f1.tar.xz && rm -f ~/.local/share/Unity-2022.3.22f1.tar.xz
 vpm list unity
 sed 's/"pathToUnityExe": "",/"pathToUnityExe": "~\/Unity\/Hub\/Editor\/Unity", ; s/"pathToUnityHub": "",/"pathToUnityHub": "\/opt\/unityhub\/unityhub-bin"' ~/.local/share/VRChatCreatorCompanion/settings.json > ~/.local/share/VRChatCreatorCompanion/settings.json 
