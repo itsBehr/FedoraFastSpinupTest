@@ -21,7 +21,7 @@ sudo sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com
 sudo dnf install dotnet-sdk-8.0 unityhub -y
 dotnet tool install --global vrchat.vpm.cli
 cat << \E0F >> /home/$USER/.bash_profile
-export PATH=$PATH:~/.dotnet/tools
+export "PATH=$PATH:~/.dotnet/tools"
 E0F
 export "PATH=$PATH:~$USER/.dotnet/tools" 
 vpm install templates
