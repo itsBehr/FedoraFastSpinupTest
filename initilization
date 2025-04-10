@@ -2,13 +2,16 @@
 #Initilization file:
 
 echo "Let's get started! What type of CPU do you use?"
-read -p '(a)md or (i)ntel' cpuType
+read -p '(a)md or (i)ntel
+' cpuType
 echo
 echo "Do you have an Nvidia GPU?"
-read -p '(y)es or (n)o' gpuType
+read -p '(y)es or (n)o
+' gpuType
 echo
 echo "Do you want the optional Linux VR Jumpstart packages?"
-read -p '(y)es or (n)o' vrOpt
+read -p '(y)es or (n)o
+' vrOpt
 echo
 
 if [ $cpuType = a -a $gpuType = y -a $vrOpt = y ]
