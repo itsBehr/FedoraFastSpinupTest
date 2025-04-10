@@ -24,7 +24,7 @@ echo "export PATH=$PATH:~/.dotnet/tools/" >> ~/.bashrc
 export PATH=$PATH:~/.dotnet/tools/
 vpm install templates
 wget --content-disposition -P ~/Unity/Hub "https://download.unity3d.com/download_unity/887be4894c44/LinuxEditorInstaller/Unity-2022.3.22f1.tar.xz" 
-tar -xf ~/Unity/Hub/Unity-2022.3.22f1.tar.xz
+cd ~/Unity/Hub tar -xf ~/Unity/Hub/Unity-2022.3.22f1.tar.xz
 rm -f ~/Unity/Hub/Unity-2022.3.22f1.tar.xz
 vpm list unity
 sed -i '2s#.*# "pathToUnityExe": "/home/$USER/Unity/Hub/Editor/Unity",#' ~/.local/share/VRChatCreatorCompanion/settings.json
