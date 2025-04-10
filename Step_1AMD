@@ -1,12 +1,11 @@
 #!/bin/bash
-sudo -i
 rm -f ~/Desktop/fedoraqwikstart.sh
-echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf
+echo "max_parallel_downloads=10" | sudo -i tee -a /etc/dnf/dnf.conf
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release -y
 sudo dnf group upgrade core -y
 sudo dnf4 group update core -y
 sudo dnf -y update
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_2AMD -P ~/Desktop -O fedoraquikstart_step_2.sh
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_2AMD" > ~/Desktop/fedoraquikstart_step_2.sh
 reboot
