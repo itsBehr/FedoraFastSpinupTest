@@ -28,5 +28,6 @@ vpm install templates
 wget --content-disposition -P ~/Unity/Hub "https://download.unity3d.com/download_unity/887be4894c44/LinuxEditorInstaller/Unity-2022.3.22f1.tar.xz" 
 tar -xf ~/Unity/Hub/Unity-2022.3.22f1.tar.xz
 rm -f ~/Unity/Hub/Unity-2022.3.22f1.tar.xz
+mkdir ~/.local/share/VRChatCreatorCompanion/settings.json
 sed -i '2s#.*#  "pathToUnityExe": "~/Unity/Hub/Editor/Unity",# ; 3s#.*# "pathToUnityHub": "/opt/unityhub/unityhub-bin"#' ~/.local/share/VRChatCreatorCompanion/settings.json
 vpm list unity
