@@ -21,5 +21,6 @@ sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linu
 dnf install dotnet-sdk-8.0 unityhub -y
 curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-unitybranch-1/vrpackagecurler1 | sudo -u "${SUDO_USER:-$USER}" bash
 dotnet tool install --global vrchat.vpm.cli
+. /home/$SUDO_USER/.bashrc
 curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-unitybranch-1/vrpackagecurler2 | sudo -u "${SUDO_USER:-$USER}" bash
 vpm install templates
