@@ -40,3 +40,5 @@ EOF
 
 cat notsettings.notjson >> settings.json
 rm -f notsettings.notjson
+
+reboot
