@@ -20,10 +20,8 @@ sudo systemctl enable libvirtd
 sudo sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
 sudo dnf install dotnet-sdk-8.0 unityhub -y
 dotnet tool install --global vrchat.vpm.cli
-cat << \E0F >> /home/$USER/.bash_profile
-export "PATH=$PATH:~/.dotnet/tools"
-E0F
-export "PATH=$PATH:~$USER/.dotnet/tools" 
+echo "export PATH=$PATH:~/.dotnet/tools/" >> ~/.bashrc
+export PATH=$PATH:~/.dotnet/tools/
 vpm install templates
 wget --content-disposition -P ~/Unity/Hub "https://download.unity3d.com/download_unity/887be4894c44/LinuxEditorInstaller/Unity-2022.3.22f1.tar.xz" 
 tar -xf ~/Unity/Hub/Unity-2022.3.22f1.tar.xz
