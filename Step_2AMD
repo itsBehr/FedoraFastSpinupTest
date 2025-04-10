@@ -25,5 +25,6 @@ export PATH=$PATH:~/.dotnet/tools
 E0F
 export "PATH=$PATH:~$USER/.dotnet/tools" 
 vpm install templates
-curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-unitybranch-1/vrpackagecurler2 | bash
-
+wget --content-disposition -P ~/Unity/Hub "https://download.unity3d.com/download_unity/887be4894c44/LinuxEditorInstaller/Unity-2022.3.22f1.tar.xz" && tar -xf ~/.local/share/Unity-2022.3.22f1.tar.xz && rm -f ~/.local/share/Unity-2022.3.22f1.tar.xz
+vpm list unity
+sed 's/"pathToUnityExe": "",/"pathToUnityExe": "~\/Unity\/Hub\/Editor\/Unity", ; s/"pathToUnityHub": "",/"pathToUnityHub": "\/opt\/unityhub\/unityhub-bin"' ~/.local/share/VRChatCreatorCompanion/settings.json > ~/.local/share/VRChatCreatorCompanion/settings.json 
