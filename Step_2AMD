@@ -1,28 +1,29 @@
 #!/bin/bash
-dnf4 group upgrade multimedia -y
-dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing -y
-dnf upgrade @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
-dnf group install sound-and-video -y
-dnf install ffmpeg-libs libva libva-utils -y
-dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
-dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
-dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686 -y
-dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686 -y
-dnf install openh264 gstreamer1-plugin-openh264 mozilla-openh264 steam lutris telegram git btop vlc gimp flatseal quodlibet yt-dlp pdfarranger audacity cargo -y
-dnf group install virtualization -y
-sudo -u "${SUDO_USER:-$USER}" echo "export PATH=$PATH:~/.cargo/bin/" >> ~/.bashrc
-wget --content-disposition -P /tmp "https://vencord.dev/download/vesktop/amd64/rpm" && dnf install /tmp/vesktop-?.?.?.x86_64.rpm -y && rm -f /home/tmp/vesktop-?.?.?.x86_64.rpm
-dnf config-manager setopt fedora-cisco-openh264.enabled=1 && rm -f /usr/lib64/firefox/browser/defaults/preferences/firefox-redhat-default-prefs.js
-systemctl enable libvirtd
+sudo -i dnf4 group upgrade multimedia -y
+sudo dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing -y
+sudo dnf upgrade @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
+sudo dnf group install sound-and-video -y
+sudo dnf install ffmpeg-libs libva libva-utils -y
+sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
+sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
+sudo dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686 -y
+sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686 -y
+sudo dnf install openh264 gstreamer1-plugin-openh264 mozilla-openh264 steam lutris telegram git btop vlc gimp flatseal quodlibet yt-dlp pdfarranger audacity cargo -y
+sudo dnf group install virtualization -y
+echo "export PATH=$PATH:~/.cargo/bin/" >> ~/.bashrc
+wget --content-disposition -P ~/Downloads "https://vencord.dev/download/vesktop/amd64/rpm" && sudo dnf install ~/Downloads/vesktop-?.?.?.x86_64.rpm -y && rm -f ~/Downloads/vesktop-?.?.?.x86_64.rpm
+sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1 && sudo rm -f /usr/lib64/firefox/browser/defaults/preferences/firefox-redhat-default-prefs.js
+sudo systemctl enable libvirtd
 
 # Everything below is for vrchat specifically-
 
-sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
-dnf install dotnet-sdk-8.0 unityhub -y
-cat << \E0F >> /home/$SUDO_USER/.bash_profile
-export PATH="$PATH:$HOME/.dotnet/tools"
+sudo sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
+sudo dnf install dotnet-sdk-8.0 unityhub -y
+dotnet tool install --global vrchat.vpm.cli
+cat << \E0F >> /home/$USER/.bash_profile
+export PATH=$PATH:~/.dotnet/tools
 E0F
-export PATH="$PATH:$HOME/.dotnet/tools" 
-sudo -u "${SUDO_USER:-$USER}" vpm install templates
-curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-unitybranch-1/vrpackagecurler2 | sudo -u "${SUDO_USER:-$USER}" bash
+export "PATH=$PATH:~$USER/.dotnet/tools" 
+vpm install templates
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-unitybranch-1/vrpackagecurler2 | bash
 
