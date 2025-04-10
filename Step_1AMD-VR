@@ -8,5 +8,5 @@ sudo dnf group upgrade core -y
 sudo dnf4 group update core -y
 sudo dnf -y update
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-wget [nextstep] -P ~/Desktop -O fedoraquikstart_step_2.sh
+wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_2AMD-VR -P ~/Desktop -O fedoraquikstart_step_2.sh
 reboot
