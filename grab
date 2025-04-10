@@ -1,3 +1,3 @@
 {
-    "pathToUnityExe": "/home/$USER/Unity/Hub/Editor/Unity",
+    "pathToUnityExe": "/home/ echo "$USER"/Unity/Hub/Editor/Unity",
     "pathtoUnityHub": "/opt/unityhub/unityhub-bin",
