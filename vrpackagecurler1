@@ -1,0 +1,3 @@
+#!/bin/bash
+export PATH=$PATH:~/.dotnet/tools/ && echo "export PATH=$PATH:~/.dotnet/tools/" | tee -a ~/.bashrc
+dotnet tool install --global vrchat.vpm.cli
