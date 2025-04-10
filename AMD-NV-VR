@@ -3,6 +3,7 @@ rm -f ~/Desktop/fedoraquikstart_step_2.sh
 sudo -i dnf in fuse -y
 sudo dnf install akmod-nvidia -y
 sudo dnf install xorg-x11-drv-nvidia-cuda -y
+echo "Waiting 5 minutes to finish installation. Please be patient; the system will restart when complete."
 sleep 5m
 curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_2AMD-VR > ~/Desktop/fedoraquikstart_step_2.sh
 reboot
