@@ -23,13 +23,13 @@ wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-main
 elif $cpuType = i -a $gpuType = y -a $vrOpt = y
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-NV-VR -P ~/Desktop -O fedoraquikstart.sh
-if $cpuType = i -a $gpuType = y -a $vrOpt = n
+elif $cpuType = i -a $gpuType = y -a $vrOpt = n
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-NV -P ~/Desktop -O fedoraquikstart.sh
-if $cpuType = i -a $gpuType = n -a $vrOpt = n
+elif $cpuType = i -a $gpuType = n -a $vrOpt = n
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I -P ~/Desktop -O fedoraquikstart.sh
-if $cpuType = i -a $gpuType = n -a $vrOpt = y
+elif $cpuType = i -a $gpuType = n -a $vrOpt = y
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-VR -P ~/Desktop -O fedoraquikstart.sh
 fi
