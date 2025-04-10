@@ -8,28 +8,28 @@ read -p '(y)es or (n)o' gpuType
 echo "Do you want the optional Linux VR Jumpstart packages?"
 read -p '(y)es or (n)o' vrOpt
 
-if $cpuType = a -a $gpuType = y -a $vrOpt = y
+if [ $cpuType = a -a $gpuType = y -a $vrOpt = y ]
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD-NV-VR -P ~/Desktop -O fedoraquikstart.sh
-elif $cpuType = a -a $gpuType = y -a $vrOpt = n
+elif [ $cpuType = a -a $gpuType = y -a $vrOpt = n ]
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD-NV -P ~/Desktop -O fedoraquikstart.sh
-elif $cpuType = a -a $gpuType = n -a $vrOpt = n
+elif [ $cpuType = a -a $gpuType = n -a $vrOpt = n ]
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD -P ~/Desktop -O fedoraquikstart.sh
-elif $cpuType = a -a $gpuType = n -a $vrOpt = y
+elif [ $cpuType = a -a $gpuType = n -a $vrOpt = y ]
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1AMD-VR -P ~/Desktop -O fedoraquikstart.sh
-elif $cpuType = i -a $gpuType = y -a $vrOpt = y
+elif [ $cpuType = i -a $gpuType = y -a $vrOpt = y ]
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-NV-VR -P ~/Desktop -O fedoraquikstart.sh
-elif $cpuType = i -a $gpuType = y -a $vrOpt = n
+elif [ $cpuType = i -a $gpuType = y -a $vrOpt = n ]
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-NV -P ~/Desktop -O fedoraquikstart.sh
-elif $cpuType = i -a $gpuType = n -a $vrOpt = n
+elif [ $cpuType = i -a $gpuType = n -a $vrOpt = n ]
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I -P ~/Desktop -O fedoraquikstart.sh
-elif $cpuType = i -a $gpuType = n -a $vrOpt = y
+elif [ $cpuType = i -a $gpuType = n -a $vrOpt = y ]
 then
 wget https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-VR -P ~/Desktop -O fedoraquikstart.sh
 fi
