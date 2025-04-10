@@ -19,7 +19,11 @@ systemctl enable libvirtd
 
 sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
 dnf install dotnet-sdk-8.0 unityhub -y
-curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-unitybranch-1/vrpackagecurler1 | sudo -u "${SUDO_USER:-$USER}" bash
+sudo -u "${SUDO_USER:-$USER}" cat << \E0F >> ~/.bash_profile
+export PATH="$PATH:/home/behr/.dotnet/tools"
+E0F
+sudo -u "${SUDO_USER:-$USER}" export PATH="$PATH:/home/behr/.dotnet/tools" 
+
 vpm install templates
 curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-unitybranch-1/vrpackagecurler2 | sudo -u "${SUDO_USER:-$USER}" bash
 
