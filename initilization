@@ -1,5 +1,6 @@
 #!/bin/bash
 #Initilization file:
+rm -f ~/Desktop/init.sh
 
 echo "Let's get started! What type of CPU do you use?"
 read -p '(a)md or (i)ntel | ' cpuType
