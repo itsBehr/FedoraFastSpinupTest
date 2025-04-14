@@ -1,0 +1,2 @@
+read -p 'Setup complete! Press enter to finalize.'
+reboot
