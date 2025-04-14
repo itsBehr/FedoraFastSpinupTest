@@ -1,0 +1,2 @@
+sudo dnf swap libva-intel-media-driver intel-media-driver --allowerasing -y
+sudo dnf install libva-intel-driver -y
