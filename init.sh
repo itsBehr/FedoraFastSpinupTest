@@ -1,5 +1,7 @@
 #!/bin/bash
 
+curl -L [update here] 
+
 rm -f ~/Desktop/init.sh
 
 echo "Let's get started! What type of CPU do you use?"
@@ -10,6 +12,7 @@ read -p '(y)es or (n)o | ' gpuType
 
 echo "Do you want the optional Linux VR Jumpstart packages?"
 read -p '(y)es or (n)o | ' vrOpt
+
 
 if [ $cpuType = a ]
 then
