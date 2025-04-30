@@ -1,7 +1,7 @@
 #!/bin/bash
 
-curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/update >> ~/.local/FFS.sh
-curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/pkg-install-preamble" >> ~/.local/FFS2.sh
+curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/update > ~/.local/FFS.sh
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/pkg-install-preamble" > ~/.local/FFS2.sh
 
 
 
@@ -20,8 +20,6 @@ curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincand
 elif [ $cpuType = i ]
 then
 curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/Intel-nugget" >> ~/.local/FFS2.sh
-else
-echo "Please insert valid arguments." && exec "$ScriptLoc"
 fi
 
 curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/pkg-install-postamble" >> ~/.local/FFS2.sh
