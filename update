@@ -6,7 +6,7 @@ sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/t
 sudo dnf group upgrade core -y
 sudo dnf4 group update core -y
 sudo dnf -y update
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 if [ -f ~/.local/FFS1.5_NV.sh ] 
 then
