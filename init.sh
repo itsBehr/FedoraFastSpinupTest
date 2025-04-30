@@ -1,8 +1,8 @@
 #!/bin/bash
 
 curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/update >> ~/.local/FFS.sh
-curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/pkg-install-preamble" >> ~/.local/FFS3.sh
-echo "#!/bin/bash" >> ~/.local/FFS2.sh
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/pkg-install-preamble" >> ~/.local/FFS2.sh
+
 
 
 echo "Let's get started! What type of CPU do you use?"
@@ -14,33 +14,30 @@ read -p '(y)es or (n)o | ' gpuType
 echo "Do you want the optional Linux VR Jumpstart packages?"
 read -p '(y)es or (n)o | ' vrOpt
 
-
 if [ $cpuType = a ]
 then
-curl -L [AMDCPUFILE] >> ~/Desktop/fedoraquikstart.sh
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/AMD-nugget" >> ~/.local/FFS2.sh
 elif [ $cpuType = i ]
 then
-curl -L [INTELCPU] >> ~/Desktop/fedoraquikstart.sh
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/Intel-nugget" >> ~/.local/FFS2.sh
 else
 echo "Please insert valid arguments." && exec "$ScriptLoc"
 fi
 
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/pkg-install-postamble" >> ~/.local/FFS2.sh
 
 if [ $gpuType = y ]
-curl -L [NVIDIAGPU] >> ~/Desktop/fedoraquikstart.sh
-elif [ $gpuType = n ]
 then
-curl -L [nostep2] >> ~/Desktop/fedoraquikstart.sh
-else 
-echo "Please insert valid arguments." && exec "$ScriptLoc"
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/NV-nugget" > ~/.local/FFS1.5(NV).sh
 fi
 
-if [ $vrOpt = n ]
-curl -L [NOVR] >> ~/Desktop/fedoraquikstart.sh
-elif [ $vrOpt = y ]
+if [ $vrOpt = y ]
 then
-curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/itsBehr-maincandidate/Step_1I-NV >> ~/Desktop/fedoraquikstart.sh
-else
-echo "Please insert valid arguments." && exec "$ScriptLoc"
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/VR-nugget" >> ~/.local/FFS2.sh
 fi
+
+
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/pkg-install-fin" >> ~/.local/FFS2.sh
+
+bash ~/.local/FFS.sh
 
