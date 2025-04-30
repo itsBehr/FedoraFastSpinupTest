@@ -26,7 +26,7 @@ curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincand
 
 if [ $gpuType = y ]
 then
-curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/NV-nugget" > ~/.local/FFS1.5(NV).sh
+curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/NV-nugget" > ~/.local/FFS1.5_NV.sh
 fi
 
 if [ $vrOpt = y ]
