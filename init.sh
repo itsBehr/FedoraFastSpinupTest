@@ -1,5 +1,5 @@
 #!/bin/bash
-
+rm -f ~/Desktop/BehrFFS.sh
 curl -L https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/update > ~/.local/FFS.sh
 curl -L "https://github.com/itsBehr/FedoraFastSpinupTest/raw/refs/heads/maincandidate-v2/pkg-install-preamble" > ~/.local/FFS2.sh
 
