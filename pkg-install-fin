@@ -1,3 +1,5 @@
 rm -f ~/.local/FFS2.sh
+sudo dnf upgrade --refresh -y
+sudo dnf autoremove -y
 read -p 'Setup complete! Press enter to finalize.'
 reboot
