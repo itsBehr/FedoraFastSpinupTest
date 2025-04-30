@@ -10,7 +10,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 if [ -f ~/.local/FFS1.5_NV.sh ] 
 then
-echo "~/.local/FFS1.5(NV).sh" > ~/Desktop/BehrFFS.sh
+echo "~/.local/FFS1.5_NV.sh" > ~/Desktop/BehrFFS.sh
 else
 echo "~/.local/FFS2.sh" > ~/Desktop/BehrFFS.sh
 fi
