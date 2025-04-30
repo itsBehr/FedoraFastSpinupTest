@@ -10,17 +10,9 @@ flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/fl
 
 if [ -f ~/.local/FFS1.5_NV.sh ] 
 then
-cat << EOF > ~/Desktop/BehrFFS.sh
-{
-  #!/bin/bash,
-  bash ~/.local/FFS1.5_NV.sh,
-EOF
+cat ~/.local/FFS1.5_NV.sh > ~/Desktop/BehrFFS.sh
 else
-cat << EOF > ~/Desktop/BehrFFS.sh
-{
-  #!/bin/bash,
-  bash ~/.local/FFS2.sh,
-EOF
+cat ~/.local/FFS2.sh > ~/Desktop/BehrFFS.sh
 fi
 
 reboot
