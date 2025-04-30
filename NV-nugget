@@ -5,5 +5,9 @@ sudo dnf install akmod-nvidia -y
 sudo dnf install xorg-x11-drv-nvidia-cuda -y
 echo "Waiting 5 minutes to finish installation. Please be patient; the system will restart when complete."
 sleep 5m
-echo "~/.local/FFS2.sh" > ~/Desktop/BehrFFS.sh
+cat << EOF > ~/Desktop/BehrFFS.sh
+{
+  #!/bin/bash,
+  bash ~/.local/FFS2.sh,
+EOF
 reboot
