@@ -1,2 +1,3 @@
+rm -f ~/.local/FFS2.sh
 read -p 'Setup complete! Press enter to finalize.'
 reboot
