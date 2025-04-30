@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -f ~/.local/FFS1.5(NV).sh
+rm -f ~/.local/FFS1.5_NV.sh
 sudo -i dnf in fuse -y
 sudo dnf install akmod-nvidia -y
 sudo dnf install xorg-x11-drv-nvidia-cuda -y
