@@ -1,3 +1,4 @@
+#!/bin/bash
 rm -f ~/.local/FFS1.5(NV).sh
 sudo -i dnf in fuse -y
 sudo dnf install akmod-nvidia -y
